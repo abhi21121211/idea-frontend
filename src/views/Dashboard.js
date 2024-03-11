@@ -6,9 +6,9 @@ function Dashboard() {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 
   // Redirect to login if not authenticated
-  if (!isLoggedIn) {
-    return <Redirect to="/login" />;
-  }
+//   if (!isLoggedIn) {
+//     return <Redirect to="/login" />;
+//   }
 
   return (
     <div>

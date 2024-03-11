@@ -1,13 +1,14 @@
-// Implement Redux store configuration
-import { createStore, combineReducers } from 'redux';
-import authReducer from './auth';
-import courseReducer from './course';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
+import authReducer from './auth'; // Import your authentication reducer
 
+// Combine reducers
 const rootReducer = combineReducers({
   auth: authReducer,
-  course: courseReducer
+  // Add other reducers as needed
 });
 
-const store = createStore(rootReducer);
+// Create Redux store with middleware
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
